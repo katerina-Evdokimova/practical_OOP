@@ -12,7 +12,7 @@ class Element
 {
 	//protected:
 public:
-	//переместить в protected
+	//ГЇГҐГ°ГҐГ¬ГҐГ±ГІГЁГІГј Гў protected
 	Element* next;
 	Element* prev;
 	T info;
@@ -54,7 +54,7 @@ class LinkedList
 {
 	//protected:
 public:
-	//переместить в protected
+	//ГЇГҐГ°ГҐГ¬ГҐГ±ГІГЁГІГј Гў protected
 	Element<T>* head;
 	Element<T>* tail;
 	int count;
@@ -90,7 +90,7 @@ public:
 	{
 		if (head != NULL)	//count==0
 		{
-			//не пустой список
+			//Г­ГҐ ГЇГіГ±ГІГ®Г© Г±ГЇГЁГ±Г®ГЄ
 			tail->next = new Element<T>(value);
 			tail->next->next = NULL;
 			tail->next->prev = tail;
@@ -99,7 +99,7 @@ public:
 		}
 		else
 		{
-			//пустой список
+			//ГЇГіГ±ГІГ®Г© Г±ГЇГЁГ±Г®ГЄ
 			head = new Element<T>(value);
 			head->next = NULL;
 			head->prev = NULL;
@@ -248,9 +248,9 @@ public:
 				Res->push(current->info);
 	}
 
-	Element<T>* Find_r(T value, Element<T>* current = NULL /*где мы находимся*/)
+	Element<T>* Find_r(T value, Element<T>* current = NULL /*ГЈГ¤ГҐ Г¬Г» Г­Г ГµГ®Г¤ГЁГ¬Г±Гї*/)
 	{
-		//current == NULL - поиск по всему списку, но надо быть осторожным с концом
+		//current == NULL - ГЇГ®ГЁГ±ГЄ ГЇГ® ГўГ±ГҐГ¬Гі Г±ГЇГЁГ±ГЄГі, Г­Г® Г­Г Г¤Г® ГЎГ»ГІГј Г®Г±ГІГ®Г°Г®Г¦Г­Г»Г¬ Г± ГЄГ®Г­Г¶Г®Г¬
 		if (LinkedList<T>::head == NULL) return NULL;
 		if (current == NULL) current = LinkedList<T>::head;
 		if (current->info == value) return current;
@@ -492,7 +492,7 @@ public:
 	{
 		if (LinkedList<T>::head != NULL)	//count==0
 		{
-			//не пустой список
+			//Г­ГҐ ГЇГіГ±ГІГ®Г© Г±ГЇГЁГ±Г®ГЄ
 			LinkedList<T>::tail->next = new Element<T>(value);
 			LinkedList<T>::tail->next->next = NULL;
 			LinkedList<T>::tail->next->prev = LinkedList<T>::tail;
@@ -501,7 +501,7 @@ public:
 		}
 		else
 		{
-			//пустой список
+			//ГЇГіГ±ГІГ®Г© Г±ГЇГЁГ±Г®ГЄ
 			LinkedList<T>::head = new Element<T>(value);
 			LinkedList<T>::head->next = NULL;
 			LinkedList<T>::head->prev = NULL;
@@ -611,10 +611,10 @@ public:
 	friend ostream& eight(ostream& stream);
 };
 
-//манипулятор
+//Г¬Г Г­ГЁГЇГіГ«ГїГІГ®Г°
 ostream& eight(ostream& stream)
 {
-	stream.setf(ios::left); //выравнивание по левому краю
+	stream.setf(ios::left); //ГўГ»Г°Г ГўГ­ГЁГўГ Г­ГЁГҐ ГЇГ® Г«ГҐГўГ®Г¬Гі ГЄГ°Г Гѕ
 	stream << oct;
 	return stream;
 }
@@ -731,7 +731,7 @@ int main()
 			ptr->push(i);
 		cout << *ptr << "\n";
 		delete ptr;
-		//добавить виртуальные деструкторы
+		//Г¤Г®ГЎГ ГўГЁГІГј ГўГЁГ°ГІГіГ Г«ГјГ­Г»ГҐ Г¤ГҐГ±ГІГ°ГіГЄГІГ®Г°Г»
 	}
 
 	if (true)
@@ -742,7 +742,7 @@ int main()
 			ptr->push(i);
 		cout << *ptr << "\n";
 		delete ptr;
-		//добавить виртуальные деструкторы
+		//Г¤Г®ГЎГ ГўГЁГІГј ГўГЁГ°ГІГіГ Г«ГјГ­Г»ГҐ Г¤ГҐГ±ГІГ°ГіГЄГІГ®Г°Г»
 	}
 
 	if (true)
