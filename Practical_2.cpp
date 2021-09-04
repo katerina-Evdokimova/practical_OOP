@@ -6,39 +6,38 @@ using namespace std;
 class MyArrayParent
 {
 protected:
-	//сколько памяти выделено?
+
 	int capacity;
-	//количество элементов - сколько памяти используем
+
 	int count;
-	//массив
+	
 	double* ptr;
 public:
-	//конструкторы и деструктор
+	
 	MyArrayParent(int Dimension = 100)
 	{
 		cout << "\nMyArrayParent constructor";
-		ptr = new double[Dimension]; // выделяем память с помощью new
+		ptr = new double[Dimension]; 
 		capacity = Dimension;
 		count = 0;
 	}
-	//конструктор принимает существующий массив
+
 	MyArrayParent(double* arr, int len)
 	{
 		cout << "\nMyArrayParent constructor";
-		//заполнить массив ptr, заполнить поля
+	
 	}
-	//деструктор
+
 	~MyArrayParent()
 	{
 		cout << "\nMyArrayParent destructor";
 		if (ptr != NULL)
 		{
-			delete[] ptr; // освобождаем свободную память 
+			delete[] ptr;  
 			ptr = NULL;
 		}
 	}
 
-	//обращение к полям
 	int Capacity() { return capacity; }
 	int Size() { return count; }
 
@@ -55,7 +54,6 @@ public:
 		
 	}
 
-	//добавление в конец нового значения 
 	void push(double value)
 	{
 		if (capacity > count)
@@ -66,8 +64,7 @@ public:
 		else
 			return;
 	}
-
-	//удаление элемента с конца
+	
 	void RemoveLastValue()
 	{
 		if (count > 0)
@@ -94,7 +91,6 @@ public:
 
  	MyArrayParent(const MyArrayParent& V)
 	{
-		//создание копии объекта - в основном, при возвращении результата из функции / передаче параметров в функцию
 		capacity = V.capacity;
 		count = V.count;
 
@@ -121,12 +117,10 @@ public:
 class MyArrayChild : public MyArrayParent
 {
 public:
-	//используем конструктор родителя. Нужно ли что-то ещё?
 	MyArrayChild(int Dimension = 100) : MyArrayParent(Dimension) { cout << "\nMyArrayChild constructor"; }
 
 	~MyArrayChild() { cout << "\nMyArrayChild destructor\n"; }
 
-	//удаление элемента
 	void RemoveAt(int index)
 	{
 		if (abs(index) < count)
@@ -151,7 +145,7 @@ public:
 
 	int IndexOf(double value, bool bFindFromStart)
 	{
-		if (bFindFromStart == true) // линейный поиск
+		if (bFindFromStart == true) // Г«ГЁГ­ГҐГ©Г­Г»Г© ГЇГ®ГЁГ±ГЄ
 		{
 			for (int i = 0; i < count; i++)
 				if (ptr[i] == value)
@@ -160,7 +154,6 @@ public:
 		}
 	}
 
-	//вставка элемента
 	void InsertAt(double value, int index)
 	{
 		if (index > 0)
@@ -205,7 +198,7 @@ public:
 class MySortedArray : public MyArrayChild
 {
 protected:
-	int IndexOf_1(double value, bool bFindFromStart)// бинарный поиск
+	int IndexOf_1(double value, bool bFindFromStart)
 	{
 		if (bFindFromStart == true)
 		{
@@ -227,7 +220,7 @@ protected:
 		}
 	}
 
-	int BinaryFind_1(double value, int left, int right) // бинарный поиск через рекурсию для вставки элемента
+	int BinaryFind_1(double value, int left, int right) 
 	{
 		int middle = (left + right) / 2;
 
@@ -245,8 +238,7 @@ protected:
 				return right;
 			return left;
 		}
-
-		// база рекурсии 
+		
 		if (fabs(ptr[middle] - value) < eps)
 			return middle;
 
@@ -285,7 +277,7 @@ public:
 
 	/*virtual int IndexOf(double value, bool bFindFromStart)
 	{
-		if (bFindFromStart == true) // линейный поиск
+		if (bFindFromStart == true) 
 		{
 			for (int i = 0; i < count; i++)
 				if (ptr[i] == value)
@@ -294,7 +286,7 @@ public:
 		}
 	}
 	*/
-	virtual void push(double x) // общая сложность О(n) = О(n) + O(log n) - вставка + бинарный поиск
+	virtual void push(double x) 
 	{
 
 		if (count == 0)
