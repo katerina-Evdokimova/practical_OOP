@@ -3,7 +3,8 @@
 
 ## Практика 1
 
-Реализован класс Vector:
+Изучена перегрузка операций.
+Сложение с вектором из 3 компонент, вычитание двух точек - вектор.
 
 ```Cpp
 
@@ -107,4 +108,8 @@ Vector_Child operator+(int a, Vector_Child F)
 
 }
 ```
+## Практика 2
 
+Реализовае бинарный поиск и поиск по индексу.
+
+[Практика 2](https://github.com/katerina-Evdokimova/practical_c-/blob/main/Practical_2.cpp)
