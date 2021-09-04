@@ -3,6 +3,7 @@
 
 ## Практика 1
 
+[Практика 1](https://github.com/katerina-Evdokimova/practical_OOP/blob/main/Practical_1.cpp)
 Изучена перегрузка операций.
 Сложение с вектором из 3 компонент, вычитание двух точек - вектор.
 
