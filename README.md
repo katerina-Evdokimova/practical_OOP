@@ -5,7 +5,9 @@
 
 Реализован класс Vector:
 
-```{C++}< >{class Vector
+```{Cpp}< >{
+
+class Vector
 {
 protected:
 	
