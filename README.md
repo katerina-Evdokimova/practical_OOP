@@ -5,7 +5,7 @@
 
 Реализован класс Vector:
 
-```{Cpp}< >{
+```Cpp
 
 class Vector
 {
@@ -106,5 +106,5 @@ Vector_Child operator+(int a, Vector_Child F)
 	return Res;
 
 }
-}```
+```
 
