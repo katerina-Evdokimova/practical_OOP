@@ -116,6 +116,9 @@ Vector_Child operator+(int a, Vector_Child F)
 
 ## Практика 3
 
+[Практика 3](https://github.com/katerina-Evdokimova/practical_OOP/blob/main/Practical_3.cpp)
+
 Реализовано наследование вида:
 
 ![](https://sun9-20.userapi.com/impg/jJaWEDUd17y5fzsy1I2tkH84kgwKLTVHERXZXw/N9qxrxj67IU.jpg?size=649x622&quality=96&sign=86febb1c61f96121d838fab3e53b2022&type=album "Орк")
+
